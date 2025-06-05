@@ -725,4 +725,159 @@ body {
     display: block;
   }
 }
+/* ナビバー基本 */
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background: #3D348B;
+  color: white;
+}
+
+.logo {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 15px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.nav-links.open {
+  display: block;
+  flex-direction: column;
+  background: #3D348B;
+  position: absolute;
+  top: 60px;
+  left: 0;
+  right: 0;
+  padding: 15px 0;
+  z-index: 999;
+}
+
+/* スマホ用ハンバーガー */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
+
+/* 更新情報カード */
+.news-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.news-card {
+  background: #fff;
+  padding: 20px;
+  border-left: 6px solid #FF6B6B;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease;
+}
+
+.news-card:hover {
+  transform: translateY(-3px);
+}
+
+.news-card .date {
+  font-weight: bold;
+  color: #3D348B;
+  font-size: 14px;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.news-card h3 {
+  margin: 0 0 8px;
+  font-size: 18px;
+}
+
+.news-card h3 a {
+  color: #3D348B;
+  text-decoration: none;
+}
+
+.news-card h3 a:hover {
+  text-decoration: underline;
+}
+
+.news-card p {
+  margin: 0;
+  font-size: 15px;
+  color: #555;
+}
+
+.category-card {
+  background: linear-gradient(135deg, #ffffff, #f9f9f9);
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease-in-out;
+  text-align: center;
+  padding: 30px 20px;
+  cursor: pointer;
+  overflow: hidden;
+  border: 1px solid #eee;
+}
+
+.category-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  background: linear-gradient(135deg, #fff8e1, #ffffff);
+}
+
+.category-card a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.category-card .icon {
+  font-size: 2.8rem;
+  margin-bottom: 12px;
+  color: #3D348B;
+  transition: transform 0.3s ease;
+}
+
+.category-card:hover .icon {
+  transform: scale(1.15) rotate(5deg);
+}
+
+.category-card h3 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #222;
+  margin-bottom: 6px;
+}
+
+.category-card p {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.4;
+}
 
