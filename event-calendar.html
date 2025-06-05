@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>イベントカレンダー | パークナビ</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      background: linear-gradient(to bottom right, #FFF7F0, #FFEFD5);
+      font-family: 'Segoe UI', 'Meiryo', sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+    .calendar-section {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+    .calendar-header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .calendar-header h1 {
+      font-size: 2.5rem;
+      color: #3D348B;
+    }
+    .month-block {
+      margin-bottom: 40px;
+    }
+    .month-title {
+      font-size: 1.8rem;
+      color: #FF6B6B;
+      border-bottom: 3px solid #FF6B6B;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+    }
+    .event-card {
+      background: #fff;
+      border-left: 6px solid #3D348B;
+      padding: 20px;
+      margin-bottom: 15px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      transition: transform 0.3s;
+    }
+    .event-card:hover {
+      transform: scale(1.02);
+    }
+    .event-card h3 {
+      margin: 0 0 10px;
+      font-size: 1.4rem;
+      color: #333;
+    }
+    .event-card p {
+      margin: 0;
+      font-size: 1rem;
+      color: #666;
+    }
+    .event-card .favorite-btn {
+      display: inline-block;
+      margin-top: 10px;
+      background: #FFD93D;
+      color: #000;
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-weight: bold;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .event-card .favorite-btn:hover {
+      background: #ffc107;
+    }
+    .calendar-footer {
+      margin-top: 50px;
+      text-align: center;
+    }
+    .calendar-footer a {
+      margin: 0 10px;
+      display: inline-block;
+      background: #3D348B;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+    }
+    .calendar-footer a:hover {
+      background: #2a256c;
+    }
+  </style>
+</head>
+<body>
+  <section class="calendar-section">
+    <div class="calendar-header">
+      <h1><i class="fa-solid fa-calendar-days"></i> 2025–2026年 ディズニーイベントカレンダー</h1>
+      <p>季節ごとに盛りだくさんのイベントを一挙紹介！登録して忘れず楽しもう！</p>
+    </div>
+
+    <div class="month-block">
+      <div class="month-title">2025年 1月〜6月</div>
+      <div class="event-card">
+        <h3>グルートのイッツ・ア・スモールワールド</h3>
+        <p>グルートのスペシャル演出付き。フォトスポットも登場！</p>
+        <button class="favorite-btn">登録</button>
+      </div>
+      <div class="event-card">
+        <h3>ダックシティ誕生祭</h3>
+        <p>ドナルドの夢の街がリアルに再現！限定グッズも多数</p>
+        <button class="favorite-btn">登録</button>
+      </div>
+      <div class="event-card">
+        <h3>フード＆ワイン・フェスティバル</h3>
+        <p>各国の屋台とシー限定ワインで贅沢な食体験</p>
+        <button class="favorite-btn">登録</button>
+      </div>
+    </div>
+
+    <div class="month-block">
+      <div class="month-title">2025年 7月〜12月</div>
+      <div class="event-card">
+        <h3>ベイマックス・ウォーターファイト</h3>
+        <p>びしょ濡れ必至の水遊びショー！夏にぴったり</p>
+        <button class="favorite-btn">登録</button>
+      </div>
+      <div class="event-card">
+        <h3>ヴィランズ・ナイト（ハロウィーン）</h3>
+        <p>仮装エリアやヴィランズの限定ショー開催</p>
+        <button class="favorite-btn">登録</button>
+      </div>
+      <div class="event-card">
+        <h3>クリスマス・ワンダーナイト</h3>
+        <p>プロジェクションマッピングと夜景が美しい</p>
+        <button class="favorite-btn">登録</button>
+      </div>
+    </div>
+
+    <div class="month-block">
+      <div class="month-title">2026年 1月〜6月（予定）</div>
+      <div class="event-card">
+        <h3>ミニーのスタイルパレード</h3>
+        <p>ミニーが主役！最新ファッションで春を彩る</p>
+        <button class="favorite-btn">登録</button>
+      </div>
+      <div class="event-card">
+        <h3>ファンタジースプリングス グランドオープン1周年</h3>
+        <p>新エリアでの記念ショー＆グッズが登場</p>
+        <button class="favorite-btn">登録</button>
+      </div>
+    </div>
+
+    <div class="calendar-footer">
+      <a href="checklist.html">季節の持ち物チェック</a>
+      <a href="plan.html">1日プラン</a>
+      <a href="couple.html">カップル向け</a>
+      <a href="gourmet.html">おすすめグルメ</a>
+    </div>
+  </section>
+
+  <script>
+    const favBtns = document.querySelectorAll('.favorite-btn');
+    favBtns.forEach((btn, idx) => {
+      const key = 'favorite_event_' + idx;
+      const saved = localStorage.getItem(key);
+      if (saved === 'true') {
+        btn.textContent = '登録済み';
+        btn.disabled = true;
+        btn.style.opacity = 0.6;
+      }
+      btn.addEventListener('click', () => {
+        localStorage.setItem(key, true);
+        btn.textContent = '登録済み';
+        btn.disabled = true;
+        btn.style.opacity = 0.6;
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>持ち物チェックリスト | パークナビ</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      background: linear-gradient(to bottom right, #FFF7F0, #FFEFD5);
+    }
+    .checklist-section {
+      max-width: 850px;
+      margin: 40px auto;
+      background: #ffffff;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      animation: fadeInUp 1s ease forwards;
+    }
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .checklist {
+      list-style: none;
+      padding: 0;
+      font-size: 18px;
+    }
+    .checklist li {
+      margin-bottom: 20px;
+      padding: 15px 20px;
+      border-left: 6px solid #FF6B6B;
+      background: #FAFAFA;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      transition: background 0.3s;
+    }
+    .checklist li:hover {
+      background: #FFF0EC;
+    }
+    .checklist input[type="checkbox"] {
+      margin-right: 15px;
+      transform: scale(1.4);
+      accent-color: #FF6B6B;
+    }
+    .checklist label {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      font-weight: 500;
+    }
+    .print-button {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 12px 25px;
+      background: #FFD93D;
+      color: #000;
+      font-weight: bold;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 16px;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+      transition: background 0.3s ease;
+    }
+    .print-button:hover {
+      background: #ffc107;
+    }
+    .sub-hero {
+      background: #FFDFDF;
+      text-align: center;
+      padding: 80px 20px;
+      color: #3D348B;
+    }
+    .sub-hero h1 {
+      font-size: 2.4rem;
+      margin-bottom: 10px;
+    }
+    .sub-hero p {
+      font-size: 1.2rem;
+      color: #555;
+    }
+    .next-link {
+      margin-top: 50px;
+      text-align: center;
+    }
+    .next-card {
+      display: inline-block;
+      background: #3D348B;
+      color: white;
+      padding: 20px 30px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+      transition: background 0.3s;
+      margin: 10px;
+    }
+    .next-card:hover {
+      background: #2a256c;
+    }
+    @media (max-width: 768px) {
+      .checklist-section {
+        padding: 20px;
+      }
+      .checklist li {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="sub-hero">
+    <h1><i class="fas fa-list-check"></i> 持ち物チェックリスト</h1>
+    <p>テーマパークを120%楽しむための必需品をチェックしよう！</p>
+  </header>
+
+  <section class="checklist-section">
+    <ul class="checklist">
+      <li><label><input type="checkbox"> 🎫 チケット（QRコードや紙）</label></li>
+      <li><label><input type="checkbox"> 📱 スマホ（モバイルバッテリーも！）</label></li>
+      <li><label><input type="checkbox"> 👛 財布（電子マネー／現金）</label></li>
+      <li><label><input type="checkbox"> 🧻 タオル／ハンカチ</label></li>
+      <li><label><input type="checkbox"> 🥤 飲み物（水筒またはペットボトル）</label></li>
+      <li><label><input type="checkbox"> ☔ 雨具（折りたたみ傘／ポンチョ）</label></li>
+      <li><label><input type="checkbox"> 🌞 日焼け止め・帽子</label></li>
+      <li><label><input type="checkbox"> 😷 替えのマスク（必要に応じて）</label></li>
+      <li><label><input type="checkbox"> 🗺️ テーマパークマップ</label></li>
+      <li><label><input type="checkbox"> 👶 子ども用アイテム（おむつ・おやつなど）</label></li>
+    </ul>
+    <button class="print-button" onclick="window.print()"><i class="fas fa-print"></i> チェックリストを印刷</button>
+
+    <div class="next-link">
+      <a class="next-card" href="beginner.html"><i class="fas fa-user-graduate"></i> 初心者ガイドへ</a>
+      <a class="next-card" href="plan.html"><i class="fas fa-route"></i> 1日プランを見る</a>
+      <a class="next-card" href="couple.html"><i class="fas fa-heart"></i> カップル向けおすすめ</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>&copy; 2025 パークナビ</p>
+  </footer>
+
+  <script>
+    const checkboxes = document.querySelectorAll('.checklist input[type="checkbox"]');
+    checkboxes.forEach((checkbox, index) => {
+      const saved = localStorage.getItem('check_' + index);
+      if (saved === 'true') {
+        checkbox.checked = true;
+      }
+      checkbox.addEventListener('change', () => {
+        localStorage.setItem('check_' + index, checkbox.checked);
+      });
+    });
+  </script>
+</body>
+</html>
