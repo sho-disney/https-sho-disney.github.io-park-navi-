@@ -20,26 +20,44 @@
 
   <!-- ナビゲーション -->
   <nav class="navbar animate__animated animate__fadeInDown">
-    <ul>
-      <li><a href="#news"><i class="fa-solid fa-newspaper"></i> 更新情報</a></li>
-      <li><a href="#beginner"><i class="fa-solid fa-book"></i> 初心者</a></li>
-      <li><a href="#family"><i class="fa-solid fa-baby"></i> ファミリー</a></li>
-      <li><a href="#couple"><i class="fa-solid fa-heart"></i> カップル</a></li>
-      <li><a href="#plan"><i class="fa-solid fa-calendar-day"></i> 1日プラン</a></li>
-      <li><a href="#food"><i class="fa-solid fa-utensils"></i> グルメ</a></li>
-      <li><a href="#event"><i class="fa-solid fa-star"></i> イベント</a></li>
-      <li><a href="#tips"><i class="fa-solid fa-lightbulb"></i> 裏技</a></li>
-    </ul>
+    <div class="navbar-container">
+      <div class="logo">🎠 ParkNavi</div>
+      <div class="menu-toggle" id="menu-toggle">
+        <i class="fa fa-bars"></i>
+      </div>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#news"><i class="fa-solid fa-newspaper"></i> 更新情報</a></li>
+        <li><a href="#beginner"><i class="fa-solid fa-book"></i> 初心者</a></li>
+        <li><a href="#family"><i class="fa-solid fa-baby"></i> ファミリー</a></li>
+        <li><a href="#couple"><i class="fa-solid fa-heart"></i> カップル</a></li>
+        <li><a href="#plan"><i class="fa-solid fa-calendar-day"></i> 1日プラン</a></li>
+        <li><a href="#food"><i class="fa-solid fa-utensils"></i> グルメ</a></li>
+        <li><a href="#event"><i class="fa-solid fa-star"></i> イベント</a></li>
+        <li><a href="#tips"><i class="fa-solid fa-lightbulb"></i> 裏技</a></li>
+      </ul>
+    </div>
   </nav>
 
   <!-- 更新情報 -->
   <section id="news" class="section animate__animated animate__fadeInUp">
     <h2>📢 最新ニュース</h2>
-    <ul class="news-list">
-      <li><span class="date">2025/06/01</span> - <a href="event-donaldcity.html">ダックシティ誕生祭 詳細公開！</a></li>
-      <li><span class="date">2025/05/29</span> - <a href="event-groot.html">グルートのスモールワールドが開始</a></li>
-      <li><span class="date">2025/05/20</span> - 雨の日おすすめまとめページ公開</li>
-    </ul>
+    <div class="news-cards">
+      <div class="news-card">
+        <span class="date">2025/06/01</span>
+        <h3><a href="event-donaldcity.html">ダックシティ誕生祭 詳細公開！</a></h3>
+        <p>あの大人気キャラの誕生日イベント！最新の写真スポットも紹介。</p>
+      </div>
+      <div class="news-card">
+        <span class="date">2025/05/29</span>
+        <h3><a href="event-groot.html">グルートのスモールワールドが開始</a></h3>
+        <p>マーベルファン必見！あのグルートがあなたを案内する新アトラクション！</p>
+      </div>
+      <div class="news-card">
+        <span class="date">2025/05/20</span>
+        <h3><a href="rainy.html">雨の日おすすめまとめページ公開</a></h3>
+        <p>雨でも大丈夫！室内アトラクション・レストラン・便利グッズも。</p>
+      </div>
+    </div>
     <div style="text-align: center; margin-top: 20px;">
       <a href="news.html" class="cta">もっと見る</a>
     </div>
@@ -57,21 +75,21 @@
         </a>
       </div>
       <div class="category-card">
-        <a href="guide-family.html">
+        <a href="baby-guide.html">
           <div class="icon"><i class="fa-solid fa-baby-carriage"></i></div>
           <h3>ファミリー向け</h3>
           <p>赤ちゃん連れでも快適に楽しむ裏ワザ満載！</p>
         </a>
       </div>
       <div class="category-card">
-        <a href="guide-couple.html">
+        <a href="couple.html">
           <div class="icon"><i class="fa-solid fa-heart"></i></div>
           <h3>カップルにおすすめ</h3>
           <p>デートで外さない！ロマンチックな回り方</p>
         </a>
       </div>
       <div class="category-card">
-        <a href="plan.html">
+        <a href="route.html">
           <div class="icon"><i class="fa-solid fa-route"></i></div>
           <h3>1日プラン</h3>
           <p>あなたに合わせたモデルコースを紹介</p>
@@ -122,15 +140,10 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
   <script>
     new WOW().init();
-  </script>
-  
-  <script>
-  const toggle = document.getElementById('menu-toggle');
-  const navbar = document.getElementById('navbar');
-  toggle.addEventListener('click', () => {
-    navbar.classList.toggle('active');
-  });
-</script>
 
+    document.getElementById("menu-toggle").addEventListener("click", function () {
+      document.getElementById("nav-links").classList.toggle("open");
+    });
+  </script>
 </body>
 </html>
